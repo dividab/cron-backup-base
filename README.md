@@ -10,12 +10,12 @@ This is just a base image that handles the transfer and scheduling. It contains 
 
 These settings can be passed as environment variables to the container:
 
-| Name                      | Description                                  | Required | Default              |
-| ------------------------- | -------------------------------------------- | ---------|---------- |
-| BACKUP_FILE_PREFIX        | Prefix of the backup file, eg. database name | No       | `backup` |
-| BACKUP_KEEP_DAYS          | The number of days to keep file dups locally | No       | `**None**` |
-| BACKUP_FTP_URL            | The URL to FTP the database dump to          | No       | `**None**` |
-| BACKUP_SCHEDULE           | Cron schedule string, see below              | No       | `**None**` |
+| Name                      | Description                                   | Required  | Default    |
+| ------------------------- | --------------------------------------------- | --------- | ---------- |
+| BACKUP_FILE_PREFIX        | Prefix of the backup file, eg. database name  | No        | `backup`   |
+| BACKUP_KEEP_DAYS          | The number of days to keep file dumps locally | No        | `**None**` |
+| BACKUP_FTP_URL            | The URL to FTP the database dump to           | No        | `**None**` |
+| BACKUP_SCHEDULE           | Cron schedule string, see below               | No        | `**None**` |
 
 ## BACKUP_FILE_PREFIX
 
