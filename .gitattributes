@@ -1,0 +1,8 @@
+# Auto detect text files and perform LF normalization
+* text eol=lf
+
+# source code
+Dockerfile text
+*.sh text
+*.md text
+LICENSE text
