@@ -2,8 +2,8 @@
 
 set -e
 
-if [ "${BACKUP_SCHEDULE}" = "**None**" ]; then
+if [ "${SCHEDULE}" = "**None**" ]; then
   sh backup.sh
 else
-  exec go-cron "$BACKUP_SCHEDULE" /bin/sh backup.sh
+  exec go-cron "$SCHEDULE" /bin/sh backup.sh
 fi
