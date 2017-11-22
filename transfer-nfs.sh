@@ -9,12 +9,13 @@ if [ "${NFS_MOUNT_PATH}" != "**None**" ]; then
     echo "NFS Transfer: Transfering backup file to NFS path $NFS_MOUNT_PATH"
 
     # Mount
-    NFS_MOUNT_LOCAL_DIR=./tmp-mount
-    mkdir $NFS_MOUNT_LOCAL_DIR
-    rpcbind -f & mount $NFS_MOUNT_OPTIONS $NFS_MOUNT_PATH $NFS_MOUNT_LOCAL_DIR
+    NFS_MOUNTPOINT=./tmp-mount
+    mkdir $NFS_MOUNTPOINT
+    # Busybox is not capable of mounting NFS shares with locking enabled. Use the option -o nolock for NFS mounts.
+    mount -o nolock -t nfs $NFS_MOUNT_OPTIONS $NFS_MOUNT_PATH $NFS_MOUNTPOINT
 
     # Copy
-    cp -a $BACKUP_FILE $NFS_MOUNT_LOCAL_DIR
+    cp -a $BACKUP_FILE $NFS_MOUNTPOINT
 
     # Cleanup
     if [ "${NFS_KEEP_DAYS}" != "**None**" ]; then
@@ -23,8 +24,8 @@ if [ "${NFS_MOUNT_PATH}" != "**None**" ]; then
     fi
 
     # Unmount
-    umount $NFS_MOUNT_LOCAL_DIR
-    rm -rf $NFS_MOUNT_LOCAL_DIR
+    umount $NFS_MOUNTPOINT
+    rm -rf $NFS_MOUNTPOINT
 
 else
     echo "NFS Transfer: NFS_MOUNT_PATH not specified, skipping NFS transfer"
