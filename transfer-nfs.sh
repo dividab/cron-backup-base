@@ -12,7 +12,7 @@ if [ "${NFS_MOUNT_PATH}" != "**None**" ]; then
     NFS_MOUNTPOINT=./tmp-mount
     mkdir $NFS_MOUNTPOINT
     # Busybox is not capable of mounting NFS shares with locking enabled. Use the option -o nolock for NFS mounts.
-    mount -o nolock -t nfs $NFS_MOUNT_OPTIONS $NFS_MOUNT_PATH $NFS_MOUNTPOINT
+    mount -o nolock,vers=2 -t nfs $NFS_MOUNT_OPTIONS $NFS_MOUNT_PATH $NFS_MOUNTPOINT
 
     # Copy
     cp -a $BACKUP_FILE $NFS_MOUNTPOINT
