@@ -3,6 +3,7 @@ FROM alpine:3.5
 # Set default variable values
 ENV FILE_PREFIX backup
 ENV SCHEDULE **None**
+ENV HEALTH_CHECK_PORT 80
 ENV LOCAL_DIR **None**
 ENV LOCAL_KEEP_DAYS **None**
 ENV FTP_HOST **None**
