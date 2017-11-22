@@ -29,6 +29,9 @@ ADD transfer-local.sh transfer-local.sh
 ADD transfer-ftp.sh transfer-ftp.sh
 ADD transfer-nfs.sh transfer-nfs.sh
 
+# Make backup.sh executable to it can be executed without path
+RUN chmod +x backup.sh
+
 # The dump script is just a dummy
 ADD dump.sh dump.sh
 
