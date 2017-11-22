@@ -2,7 +2,6 @@
 
 set -e
 set -o pipefail
-set -x
 
 if [ "${NFS_MOUNT_PATH}" != "**None**" ]; then
 

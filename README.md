@@ -26,10 +26,10 @@ The prefix of the created backupfile. It will have a suffix of `_$(date +"%Y-%m-
 This variable takes a standard `cron` schedule string. See below for details.
 
 ```
-* * * * * * *
-- - - - - - -
-| | | | | | |
-| | | | | | + ---- year, optional
+* * * * * *
+- - - - - -
+| | | | | |
+| | | | | |
 | | | | | +------- day of week (0 - 6) (Sunday=0)
 | | | | +--------- month (1 - 12)
 | | | +----------- day of month (1 - 31)
@@ -38,15 +38,18 @@ This variable takes a standard `cron` schedule string. See below for details.
 +----------------- second (0 - 59), optional
 ```
 
-| Field name     | Mandatory?   | Allowed values    | Allowed special characters |
-| -------------- | ------------ | ----------------- | -------------------------- |
-| Seconds        | No           | 0-59              | `* / , -`                  |
-| Minutes        | Yes          | 0-59              | `* / , -`                  |
-| Hours          | Yes          | 0-23              | `* / , -`                  |
-| Day of month   | Yes          | 1-31              | `* / , - L W`              |
-| Month          | Yes          | 1-12 or JAN-DEC   | `* / , -`                  |
-| Day of week    | Yes          | 0-6 or SUN-SAT    | `* / , - L #`              |
-| Year           | No           | 1970–2099         | `* / , -`                  |
+A cron expression represents a set of times, using 6 space-separated fields.
+
+Field name   | Mandatory? | Allowed values  | Allowed special characters
+----------   | ---------- | --------------  | --------------------------
+Seconds      | Yes        | 0-59            | * / , -
+Minutes      | Yes        | 0-59            | * / , -
+Hours        | Yes        | 0-23            | * / , -
+Day of month | Yes        | 1-31            | * / , - ?
+Month        | Yes        | 1-12 or JAN-DEC | * / , -
+Day of week  | Yes        | 0-6 or SUN-SAT  | * / , - ?
+
+For more information see the [go cron docs](https://godoc.org/github.com/robfig/cron).
 
 ```
 EXAMPLE: Every day at 01:00
