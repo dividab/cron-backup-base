@@ -11,7 +11,7 @@ if [ "${NFS_MOUNT_PATH}" != "**None**" ]; then
     # Mount
     NFS_MOUNT_LOCAL_DIR=./tmp-mount
     mkdir $NFS_MOUNT_LOCAL_DIR
-    mount $NFS_MOUNT_OPTIONS $NFS_MOUNT_PATH $NFS_MOUNT_LOCAL_DIR
+    rpcbind -f & mount $NFS_MOUNT_OPTIONS $NFS_MOUNT_PATH $NFS_MOUNT_LOCAL_DIR
 
     # Copy
     cp -a $BACKUP_FILE $NFS_MOUNT_LOCAL_DIR
