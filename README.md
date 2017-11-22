@@ -93,6 +93,8 @@ FTP_PASSWORD=mypassword
 
 ## NFS Transfer Settings
 
+> NOTE: To use NFS transfer the container must be started with the `--privileged`.
+
 | Name               | Description                                   | Required  | Default    |
 | ------------------ | --------------------------------------------- | --------- | ---------- |
 | NFS_MOUNT_PATH     | The NFS path to transfer to                   | No        | `**None**` |
