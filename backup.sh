@@ -19,8 +19,7 @@ source ./transfer-ftp.sh
 source ./transfer-nfs.sh
 
 # Cleanup the dump
-echo "Cleaning up local backup file"
-rm $BACKUP_DIR/$BACKUP_FILE_NAME
+rm $BACKUP_FILE
 
 # Message about success
 echo "Dump and transfer completed, filename: $BACKUP_FILE_NAME"

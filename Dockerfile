@@ -6,11 +6,12 @@ ENV SCHEDULE **None**
 ENV LOCAL_DIR **None**
 ENV LOCAL_KEEP_DAYS **None**
 ENV FTP_HOST **None**
-ENV FTP_PORT **None**
+ENV FTP_PORT 21
 ENV FTP_PATH **None**
 ENV FTP_USER **None**
 ENV FTP_PASSWORD **None**
-ENV NFS_HOST **None**
+ENV NFS_MOUNT_PATH **None**
+ENV NFS_MOUNT_OPTIONS ''
 
 # Run install
 ADD install.sh install.sh

@@ -74,7 +74,7 @@ If these variables are set then the file will be transfered to a local dir accor
 | Name               | Description                                   | Required  | Default    |
 | ------------------ | --------------------------------------------- | --------- | ---------- |
 | FTP_HOST           | The FTP host to transfer to                   | No        | `**None**` |
-| FTP_PORT           | The FTP port                                  | No        | `**None**` |
+| FTP_PORT           | The FTP port                                  | No        | `21`       |
 | FTP_DIR            | The FTP directory                             | No        | `**None**` |
 | FTP_USER           | The FTP user name                             | No        | `**None**` |
 | FTP_PASSWORD       | The URL to FTP the database dump to           | No        | `**None**` |
@@ -95,7 +95,8 @@ FTP_PASSWORD=mypassword
 
 | Name               | Description                                   | Required  | Default    |
 | ------------------ | --------------------------------------------- | --------- | ---------- |
-| NFS_HOST           | The NFS host to transfer to                   | No        | `**None**` |
+| NFS_MOUNT_PATH     | The NFS path to transfer to                   | No        | `**None**` |
+| NFS_MOUNT_OPTIONS  | The NFS mount options                         | No        | `''`       |
 
 # How to create a image based on this image
 
