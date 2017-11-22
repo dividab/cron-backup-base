@@ -160,6 +160,5 @@ $ curl -v localhost:18080
 To manually trigger a backup you can exec a shell in the container and run this command:
 
 ```
-$ backup.sh
+$ ./backup.sh
 ```
-
