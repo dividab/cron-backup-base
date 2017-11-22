@@ -12,6 +12,7 @@ ENV FTP_USER **None**
 ENV FTP_PASSWORD **None**
 ENV NFS_MOUNT_PATH **None**
 ENV NFS_MOUNT_OPTIONS ''
+ENV NFS_KEEP_DAYS **None**
 
 # Run install
 ADD install.sh install.sh
