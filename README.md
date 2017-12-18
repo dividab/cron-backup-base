@@ -113,7 +113,7 @@ EXAMPLE: Every day at 01:00
 
 EXAMPLE: Every 5 seconds
 
-*/5 * * * * * *
+*/5 * * * * *
 ```
 
 ## LOCAL Transfer Settings
