@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.9.4
 
 # Set default variable values
 ENV FILE_PREFIX backup
